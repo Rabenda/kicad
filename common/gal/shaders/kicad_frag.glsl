@@ -130,7 +130,7 @@ void main()
 
         // Unless we're stretching chars it is okay to consider
         // one derivative for filtering
-        float derivative   = length( dFdx( tex ) ) * u_fontTextureWidth / 4;
+        float derivative   = length( dFdx( tex ) ) * float(u_fontTextureWidth) / 4.0;
 
 #ifdef USE_MSDF
         float dist         = median( texture2D( u_fontTexture, tex ).rgb );
